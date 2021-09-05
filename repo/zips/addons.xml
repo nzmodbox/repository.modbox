@@ -229,7 +229,7 @@
 </addon>
 
 <addon id="repository.modbox" name="Modbox Repo" version="1.0" provider-name="NZ Modbox">
-    <extension point="xbmc.addon.repository" name="NZ Modbox Repository">
+    <extension point="xbmc.addon.repository" name="NZmodbox Repository">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/nzmodbox/repository.modbox/Master/repo/zips/addons.xml</info>
             <checksum>https://raw.githubusercontent.com/nzmodbox/repository.modbox/Master/repo/zips/addons.xml.md5</checksum>
