@@ -36,7 +36,6 @@ class Downloader:
         self.progress_dialog = xbmcgui.DialogProgress()
 
     def download(self, url, dest):
-        cancelled = False
         self.progress_dialog.create(CONFIG.ADDONTITLE, "Downloading Content")
         self.progress_dialog.update(0)
         
@@ -86,12 +85,3 @@ class Downloader:
                     speed += '[B]ETA:[/B] [COLOR %s]%02d:%02d[/COLOR][/COLOR]' % (CONFIG.COLOR1, div[0], div[1])
                     
                     self.progress_dialog.update(done, '\n' + str(currently_downloaded) + '\n' + str(speed)) 
-                    if self.progress_dialog.iscanceled():
-                    	cancelled = True
-                    	break
-        if cancelled:
-        	xbmc.sleep(1000)
-        	os.unlink(dest)
-        	dialog = xbmcgui.Dialog()
-        	dialog.ok('Cancelled', 'Download Cancelled')
-        	quit()
